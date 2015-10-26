@@ -12,7 +12,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     @IBAction func btnClear(sender: AnyObject) {
         
-        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setObject(nil, forKey: "username")
         defaults.setObject(nil, forKey: "password")
@@ -29,22 +29,41 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     //color
     var selectedcolor:String!
-    let pickerColor = ["Red","Yellow", "Blue"]
+    let pickerColor = ["White","Red","Yellow", "Blue"]
     @IBAction func btnLoad(sender: UIButton) {
-        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         if let userNameNotNull = defaults.objectForKey("username") as? String {
-            self.txtUsername.text = defaults.objectForKey("username") as String
+            self.txtUsername.text = defaults.objectForKey("username") as? String
         }
         
         if let passwordIsNotNill = defaults.objectForKey("password") as? String {
-            self.txtPassword.text = defaults.objectForKey("password") as String
+            self.txtPassword.text = defaults.objectForKey("password") as? String
         }
         
         
         if let colorIsNotNill = defaults.objectForKey("color") as? String {
-            var favoriteColorSelected = defaults.objectForKey("color") as String
-            var SelectedColor:Int = find(pickerColor, favoriteColorSelected)!
+            var favoriteColorSelected = defaults.objectForKey("color") as! String
+            let SelectedColor:Int = (pickerColor).indexOf(favoriteColorSelected)!
+           
+            if (favoriteColorSelected=="While")
+            {
+                self.view.backgroundColor = UIColor.whiteColor()
+            }
+            if (favoriteColorSelected=="Red")
+            {
+                self.view.backgroundColor = UIColor.redColor()
+            }
+            if (favoriteColorSelected=="Yellow")
+            {
+                self.view.backgroundColor = UIColor.yellowColor()
+            }
+            if (favoriteColorSelected=="Blue")
+            {
+                self.view.backgroundColor = UIColor.blueColor()
+            }
+            
+
             MyColors.selectRow(SelectedColor,inComponent: 0, animated: true)
         }
     }
@@ -57,7 +76,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     
     
     @IBAction func btnSave(sender: UIButton) {
-        var defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         defaults.setObject(self.txtUsername.text, forKey: "username")
         defaults.setObject(self.txtPassword.text, forKey: "password")
@@ -75,15 +94,32 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerColor.count
     }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
          selectedcolor=pickerColor[row]
+        if (selectedcolor=="White")
+        {
+            self.view.backgroundColor = UIColor.whiteColor()
+        }
+        if (selectedcolor=="Red")
+        {
+             self.view.backgroundColor = UIColor.redColor()
+        }
+        if (selectedcolor=="Yellow")
+        {
+             self.view.backgroundColor = UIColor.yellowColor()
+        }
+        if (selectedcolor=="Blue")
+        {
+             self.view.backgroundColor = UIColor.blueColor()
+        }
+       
         return pickerColor[row]
        
     }
     //new method hiding keyboard
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches , withEvent: event)
     }
     //set delegate to all uitextfields
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
