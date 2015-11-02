@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -30,7 +30,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUH-Cz-pF6">
                                 <rect key="frame" x="180" y="64" width="240" height="245"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-LR-8lm">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zE-LR-8lm">
                                         <rect key="frame" x="1" y="190" width="239" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Clear Preferences">
@@ -41,7 +41,7 @@
                                             <action selector="btnSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9a-50-yg0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nm-Jo-7MW">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nm-Jo-7MW">
                                         <rect key="frame" x="1" y="165" width="239" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Save Preferences">
@@ -67,7 +67,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="TjA-Ku-zCP"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter UserName" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rxW-Mb-yzi">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter UserName" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rxW-Mb-yzi">
                                         <rect key="frame" x="1" y="0.0" width="239" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -76,7 +76,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="rdJ-xK-4bK"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVd-Cq-7gn">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVd-Cq-7gn">
                                         <rect key="frame" x="1" y="215" width="239" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Load Preferences">
@@ -86,8 +86,8 @@
                                             <action selector="btnLoad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L21-zV-gsi"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuT-As-JQZ">
-                                        <rect key="frame" x="1" y="85" width="239" height="76"/>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iuT-As-JQZ">
+                                        <rect key="frame" x="1" y="81" width="239" height="76"/>
                                         <animations/>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="3bL-zh-Puy"/>
@@ -99,18 +99,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="MhR-Ty-4iJ" firstAttribute="leading" secondItem="DXH-mB-HP3" secondAttribute="leading" id="0PI-96-2ed"/>
-                                    <constraint firstItem="rxW-Mb-yzi" firstAttribute="leading" secondItem="iuT-As-JQZ" secondAttribute="leading" id="2Fl-Km-4Nx"/>
-                                    <constraint firstItem="4nm-Jo-7MW" firstAttribute="leading" secondItem="iuT-As-JQZ" secondAttribute="leading" id="2Gy-oX-YSY"/>
                                     <constraint firstAttribute="trailing" secondItem="rxW-Mb-yzi" secondAttribute="trailing" id="8co-MU-4vh"/>
                                     <constraint firstItem="MhR-Ty-4iJ" firstAttribute="leading" secondItem="qUH-Cz-pF6" secondAttribute="leading" id="9PO-C7-6al"/>
-                                    <constraint firstItem="8zE-LR-8lm" firstAttribute="top" secondItem="iuT-As-JQZ" secondAttribute="bottom" constant="29" id="9X8-X9-GBu"/>
                                     <constraint firstItem="DXH-mB-HP3" firstAttribute="trailing" secondItem="MhR-Ty-4iJ" secondAttribute="trailing" id="AlS-9Z-QC4"/>
-                                    <constraint firstItem="iuT-As-JQZ" firstAttribute="top" secondItem="MhR-Ty-4iJ" secondAttribute="bottom" constant="1" id="BD1-MJ-WQD"/>
-                                    <constraint firstItem="4nm-Jo-7MW" firstAttribute="trailing" secondItem="iuT-As-JQZ" secondAttribute="trailing" id="HyS-q2-aYi"/>
-                                    <constraint firstItem="4nm-Jo-7MW" firstAttribute="top" secondItem="iuT-As-JQZ" secondAttribute="bottom" constant="4" id="I4k-Yh-Xxd"/>
-                                    <constraint firstItem="iuT-As-JQZ" firstAttribute="trailing" secondItem="rxW-Mb-yzi" secondAttribute="trailing" id="JEr-tL-saI"/>
                                     <constraint firstItem="8zE-LR-8lm" firstAttribute="centerX" secondItem="qUH-Cz-pF6" secondAttribute="centerX" id="N74-Dn-OTq"/>
-                                    <constraint firstItem="iuT-As-JQZ" firstAttribute="centerY" secondItem="qUH-Cz-pF6" secondAttribute="centerY" id="U5V-vw-iFB"/>
                                     <constraint firstItem="8zE-LR-8lm" firstAttribute="trailing" secondItem="4nm-Jo-7MW" secondAttribute="trailing" id="e9L-uZ-ZCp"/>
                                     <constraint firstItem="4nm-Jo-7MW" firstAttribute="leading" secondItem="8zE-LR-8lm" secondAttribute="leading" id="hGw-8s-Zd6"/>
                                     <constraint firstItem="MhR-Ty-4iJ" firstAttribute="top" secondItem="DXH-mB-HP3" secondAttribute="bottom" constant="3" id="iy7-te-ytd"/>

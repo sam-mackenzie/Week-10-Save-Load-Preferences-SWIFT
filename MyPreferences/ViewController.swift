@@ -46,7 +46,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             var favoriteColorSelected = defaults.objectForKey("color") as! String
             let SelectedColor:Int = (pickerColor).indexOf(favoriteColorSelected)!
            
-            if (favoriteColorSelected=="While")
+            if (favoriteColorSelected=="White")
             {
                 self.view.backgroundColor = UIColor.whiteColor()
             }
